@@ -1,6 +1,6 @@
---This Code Is from Jn Hh Gaming!
---Its Made By ItsFreezy!
---Sub To Jn HH Gaming
+--Some of this is not my code.So credit to Jn HH Gaming!
+--Made By ItsFreezy!
+--Do not edit any of this code unless you know what you doing enjoy!
 
 
 local SytroWaterMark = Instance.new("ScreenGui")
@@ -39,7 +39,7 @@ TextLabel.Size = UDim2.new(0.170134634, 0, 0.0700389072, 0)
 
 TextLabel.Font = Enum.Font.GothamBold
 
-TextLabel.Text = "GhostNight "
+TextLabel.Text = "GhostNight"
 
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 
@@ -109,13 +109,13 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
 
 end)
 
+ 
 
---Credit GhostNight
 game.StarterGui:SetCore("SendNotification", {
 
     Title = "GhostNight V4";
 
-    Text = "Made By ItsFreezy"; -- what the text says (ofc)
+    Text = "Made by ItsFreezy"; -- what the text says (ofc)
 
     Duration = 30;
 
@@ -127,13 +127,11 @@ game.StarterGui:SetCore("SendNotification", {
 
     Title = "Enjoy";
 
-    Text = "Enjoy GhostNight v4"; -- what the text says (ofc)
+    Text = "Enjoy GhostNight V4"; -- what the text says (ofc)
 
     Duration = 30;
 
 })
-
---Gui GhostNight v4
 
 local players = game:GetService("Players")
 
@@ -685,7 +683,7 @@ end
 
 local kavoUi = loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandLittleBrother/SytroNight4ROBLOX/main/libraries/kavo.lua"))()
 
-local window = kavoUi.CreateLib("GhostNight", "BloodTheme")
+local window = kavoUi.CreateLib("Jn HH Gaming Hub V7", "BloodTheme")
 
 local entity = loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Libraries/entityHandler.lua", true))()
 
@@ -743,16 +741,15 @@ local function makeRainbowText(text)
 
 end
 
-
 -- Tab
 
 local Tab1 = window:NewTab("Main Hub")
 
-local Tab1Section = Tab1:NewSection("Scripts")
+local Tab1Section = Tab1:NewSection("Main Hub Script")
 
-local Tab2 = window:NewTab("Other Bedwars Hubs")
+local Tab2 = window:NewTab("Other Bedwars Script")
 
-local Tab2Section = Tab2:NewSection("Other Bedwars Hubs")
+local Tab2Section = Tab2:NewSection("Other Bedwars Script")
 
 local Tab3 = window:NewTab("Auto Toxic")
 
@@ -764,18 +761,9 @@ local Tab4Section = Tab4 :NewSection("Animations")
 
 local Tab5 = window:NewTab("Credits")
 
-local Tab5Section = Tab5:NewSection("Made by ItsFreezy")
+local Tab5Section = Tab5:NewSection("Made By ItsFreezy")
 
-local Tab6 = window:NewTab("Settings Beta")
-
-local Tab6Section = Tab6:NewSection("Settings Beta")
-
---Tabs Section
- 
- 
- local Tab5Section = Tab5:NewSection("Made By ItsFreezy")
-
-local Tab5Section = Tab5:NewSection("Helper - GhostTank")
+local Tab5Section = Tab5:NewSection("Super Helper - Snick")
 
 local Tab5Section = Tab5:NewSection(" Main Helpers - Darlux,NTD,Gaming Scripter")
 
@@ -783,11 +771,11 @@ local Tab5Section = Tab5:NewSection("Helpers - YzHacker,7GrandDad,Vamp")
 
 local Tab5Section =Tab5:NewSection("Brother - GhostTank")
 
+ 
 
---Buttons Dont edit unless you actual know what you doing!
---Local Tab 1 Here
+-- Buttons
 
-Tab1Section:NewToggle("CFrames", "", function(state)
+Tab1Section:NewToggle("CFrame", "", function(state)
 
 	if state then
 
@@ -821,27 +809,137 @@ end)
 
 Tab1Section:NewSlider("Speed 1-42", "Adjust CFrame speed", 42, 1, function(s)
 
-
---Local Tab 2 Here!
-
-
-Tab2Section:NewButton("NightBed"," Open Nightbed",function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedX/main/NightbedScriptLol/mostNightbed.lua", true))()
+	speedval["Value"] = s
 
 end)
 
-Tab2Section:NewButton("MoonLight","Opens MoonLight",function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/8pmX8/moonlight.cool/main/mlobfuscated.lua'))();
+Tab1Section:NewToggle("KillAura", "Autoswing the sword if someone is near you", function(state)
+
+	if state then
+
+		BindToStepped("Killaura", 1, function()
+
+			if entity.isAlive then
+
+				KillauraRemote()
+
+			end
+
+		end)
+
+	else
+
+		UnbindFromStepped("Killaura")
+
+	end
 
 end)
 
-Tab2Section:NewButton("Maxlaser Gui old","Opens MoonLight",function()
-loadstring(game:HttpGet"https://raw.githubusercontent.com/IlikeScript1234/Roblox-maxlaser-1/main/Maxlaser%203")()
+Tab1Section:NewSlider("Distance 1-20", "Increase killaura distance", 20, 1, function(val)
+
+	DistVal["Value"] = val
 
 end)
 
---Local Tab 3 Here!
+Tab1Section:NewToggle("No Swing", "Disable killaura swing", function(state)
 
+	if state then
+
+		if killauraswing["Enabled"] == true then
+
+			killauraswing["Enabled"] = false
+
+		end
+
+	else
+
+		if killauraswing["Enabled"] == false then
+
+			killauraswing["Enabled"] = true
+
+		end
+
+	end
+
+end)
+
+Tab1Section:NewSlider("Sound 1-0", "Adjust killaura sound", 1, 0, function(val)
+
+	killaurasoundval["Value"] = val
+
+end)
+
+	
+
+Tab1Section:NewToggle("Bed Nuker", "Auto break bed and covers", function(state)
+
+	if state then
+
+		BindToStepped("BedNuker", 1, function()
+
+			nuker()
+
+		end)
+
+	else
+
+		UnbindFromStepped("BedNuker")
+
+	end
+
+end)
+
+Tab1Section:NewButton("Keyboard", "Opens Keyboard", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/kC3dAMvt"))()
+
+end)
+
+Tab1Section:NewToggle("No Fall Damage", "Opens No Fall Damage", function(callback)
+
+    local nofall = true
+
+    if callback then
+
+        if nofall then
+
+            spawn(function()
+
+                repeat
+
+                    wait()
+
+                    if nofall == false then
+
+                        return end
+
+                        game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit:FireServer()
+
+                    until nofall == false
+
+                end)
+
+            end
+
+    else
+
+        local nofall = false
+
+    end
+
+end)
+
+Tab2Section:NewButton("Vape","Opens Vape",function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-virus/holy-arceus-x-working-vape-v4/main/vape%20v4%20fixed%20version.lua", true))()
+
+end)
+
+Tab2Section:NewButton("Rise","Opens Rise",function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/RiseForRoblox/main/main.lua", true))()
+
+end)
 
 Tab3Section:NewButton("Spam" , "Opens Spam",function()
 
@@ -952,129 +1050,6 @@ Tab3Section:NewButton("Make Server Leave","Opens Make Server Leave",function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/JNHHGaming123/JN-HH-Gaming-AutoToxic1/main/README.md",true))()
 
 end)
-	speedval["Value"] = s
-
-end)
-
-Tab1Section:NewToggle("KillAura", "Attack Near By Players", function(state)
-
-	if state then
-
-		BindToStepped("Killaura", 1, function()
-
-			if entity.isAlive then
-
-				KillauraRemote()
-
-			end
-
-		end)
-
-	else
-
-		UnbindFromStepped("Killaura")
-
-	end
-
-end)
-
-Tab1Section:NewSlider("Distance 1-20", "Increase killaura distance", 20, 1, function(val)
-
-	DistVal["Value"] = val
-
-end)
-
-Tab1Section:NewToggle("No Swing", "Disable killaura swing", function(state)
-
-	if state then
-
-		if killauraswing["Enabled"] == true then
-
-			killauraswing["Enabled"] = false
-
-		end
-
-	else
-
-		if killauraswing["Enabled"] == false then
-
-			killauraswing["Enabled"] = true
-
-		end
-
-	end
-
-end)
-
-Tab1Section:NewSlider("Sound 1-0", "Adjust killaura sound", 1, 0, function(val)
-
-	killaurasoundval["Value"] = val
-
-end)
-
-	
-
-Tab1Section:NewToggle("Bed Break", "Auto break bed and covers", function(state)
-
-	if state then
-
-		BindToStepped("BedNuker", 1, function()
-
-			nuker()
-
-		end)
-
-	else
-
-		UnbindFromStepped("BedNuker")
-
-	end
-
-end)
-
-Tab1Section:NewButton("Keyboard", "Opens Keyboard", function()
-
-loadstring(game:HttpGet("https://pastebin.com/raw/kC3dAMvt"))()
-
-end)
-
-Tab1Section:NewToggle("No Fall Damage", "Opens No Fall Damage", function(callback)
-
-    local nofall = true
-
-    if callback then
-
-        if nofall then
-
-            spawn(function()
-
-                repeat
-
-                    wait()
-
-                    if nofall == false then
-
-                        return end
-
-                        game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit:FireServer()
-
-                    until nofall == false
-
-                end)
-
-            end
-
-    else
-
-        local nofall = false
-
-    end
-
-end)
-
-
---Local Tab 4 Here!
-
 
 Tab4Section:NewButton("Zombie Animation" , "Plays Zombie Animation",function()
 
@@ -1154,9 +1129,9 @@ loadstring(game:HttpGet("https://pastebin.com/raw/MSZPFVfE",true))()
 
 end)
 
-local Tab2Section = Tab4:NewSection("Cape")
+local Tab4Section = Tab4:NewSection("Cape")
 
-Tab2Section:NewButton("JN Cape", "Opens JN Cape", function()
+Tab4Section:NewButton("JN Cape", "Opens JN Cape", function()
 
 local player = game:GetService("Players")
 
@@ -1264,13 +1239,13 @@ if lplr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
 
 end)
 
-Tab2Section:NewButton("NightBed Cape","Opens NightBed Cape",function()
+Tab4Section:NewButton("NightBed Cape","Opens NightBed Cape",function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/CapePACK/main/Nightbed.Cape%3F.lua",true))()
 
 end)
 
-Tab2Section:NewButton("Cape", "Opens Cape", function()
+Tab4Section:NewButton("Cape", "Opens Cape", function()
 
 local player = game:GetService("Players")
 
@@ -1378,8 +1353,7 @@ if lplr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
 
 end)
 
-
-Tab6Section:NewButton("FixCam", "fix camera bug on mobile", function()
+Tab1Section:NewButton("FixCam", "fix camera bug on mobile", function()
 
 	cam.CameraType = Enum.CameraType.Fixed
 
@@ -1387,7 +1361,7 @@ Tab6Section:NewButton("FixCam", "fix camera bug on mobile", function()
 
 end)
 
-Tab4Section:NewButton("Future", "e", function()
+Tab2Section:NewButton("Future", "e", function()
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
 
