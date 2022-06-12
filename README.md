@@ -825,15 +825,18 @@ Tab1Section:NewSlider("Speed 1-42", "Adjust CFrame speed", 42, 1, function(s)
 --Local Tab 2 Here!
 
 
-Tab2Section:NewButton("Vape","Opens Vape",function()
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Error-virus/holy-arceus-x-working-vape-v4/main/vape%20v4%20fixed%20version.lua", true))()
+Tab2Section:NewButton("NightBed"," Open Nightbed",function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/NightbedX/main/NightbedScriptLol/mostNightbed.lua", true))()
 
 end)
 
-Tab2Section:NewButton("Rise","Opens Rise",function()
+Tab2Section:NewButton("MoonLight","Opens MoonLight",function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/8pmX8/moonlight.cool/main/mlobfuscated.lua'))();
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/RiseForRoblox/main/main.lua", true))()
+end)
+
+Tab2Section:NewButton("Maxlaser Gui old","Opens MoonLight",function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/IlikeScript1234/Roblox-maxlaser-1/main/Maxlaser%203")()
 
 end)
 
