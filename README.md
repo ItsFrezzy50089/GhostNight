@@ -39,7 +39,7 @@ TextLabel.Size = UDim2.new(0.170134634, 0, 0.0700389072, 0)
 
 TextLabel.Font = Enum.Font.GothamBold
 
-TextLabel.Text = "GhostNight V4"
+TextLabel.Text = "GhostNight "
 
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 
@@ -685,7 +685,7 @@ end
 
 local kavoUi = loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandLittleBrother/SytroNight4ROBLOX/main/libraries/kavo.lua"))()
 
-local window = kavoUi.CreateLib("Jn HH Gaming Hub V7", "BloodTheme")
+local window = kavoUi.CreateLib("GhostNight", "BloodTheme")
 
 local entity = loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/Libraries/entityHandler.lua", true))()
 
@@ -760,7 +760,7 @@ local Tab3Section = Tab3:NewSection("Chat Auto Toxic")
 
 local Tab4 = window:NewTab("Fun Stuff")
 
-local Tab4Section = Tab4 :NewSection("Fun Stuff And Troll")
+local Tab4Section = Tab4 :NewSection("Animations")
 
 local Tab5 = window:NewTab("Credits")
 
