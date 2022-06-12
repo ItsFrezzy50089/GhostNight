@@ -73,7 +73,7 @@ TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
 
 TextLabel_2.Font = Enum.Font.GothamBold
 
-TextLabel_2.Text = "V7"
+TextLabel_2.Text = "V4"
 
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 
@@ -1151,9 +1151,9 @@ loadstring(game:HttpGet("https://pastebin.com/raw/MSZPFVfE",true))()
 
 end)
 
-local Tab4Section = Tab4:NewSection("Cape")
+local Tab2Section = Tab4:NewSection("Cape")
 
-Tab4Section:NewButton("JN Cape", "Opens JN Cape", function()
+Tab2Section:NewButton("JN Cape", "Opens JN Cape", function()
 
 local player = game:GetService("Players")
 
@@ -1261,13 +1261,13 @@ if lplr.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
 
 end)
 
-Tab4Section:NewButton("NightBed Cape","Opens NightBed Cape",function()
+Tab2Section:NewButton("NightBed Cape","Opens NightBed Cape",function()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NTDCore/CapePACK/main/Nightbed.Cape%3F.lua",true))()
 
 end)
 
-Tab4Section:NewButton("Cape", "Opens Cape", function()
+Tab2Section:NewButton("Cape", "Opens Cape", function()
 
 local player = game:GetService("Players")
 
